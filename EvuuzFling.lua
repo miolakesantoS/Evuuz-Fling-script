@@ -25,6 +25,10 @@ function clip()
 		local CornerPartsFolder = Instance.new("Folder", workspace)
 		CornerPartsFolder.Name = "TEMP_CC_CornerParts"
 
+		local mini = 75
+		local nomral = 100
+		local super = 150
+		
 		local function createCorner(pos)
 			local CornerPart = Instance.new("Part", CornerPartsFolder)
 			CornerPart.Anchored = true
@@ -105,8 +109,8 @@ function clip()
 				rootPart.CFrame = rootPart.CFrame + SelectedCorner.CFrame.RightVector  
 					* ((XDistance and XDistance.Value) or roundTransformation(SelectedClipPart.Size.X))
 			end
-
-			local yBoostMagnitude = 150 -- Adjust the Y Boost Here (75=Mini 100=Normal 150=(Default)Super)
+			
+			local yBoostMagnitude = super
 			rootPart.AssemblyLinearVelocity = Vector3.new(0, yBoostMagnitude, 0)
       
 			local bodyAng = Instance.new("BodyAngularVelocity")
